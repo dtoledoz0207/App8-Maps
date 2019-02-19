@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 
 // ANGULAR MATERIAL
 import { MaterialModule } from './material.module';
+import { MapaComponent } from './components/mapa/mapa.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
