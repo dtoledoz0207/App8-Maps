@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { MapaComponent } from './components/mapa/mapa.component';
 
+import { AgmCoreModule } from '@agm/core';
+
 
 
 @NgModule({
@@ -19,7 +21,10 @@ import { MapaComponent } from './components/mapa/mapa.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDJ5cITdx4KfRavJiwBwGK8vphjz73-RxM'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
