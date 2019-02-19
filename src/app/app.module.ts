@@ -7,16 +7,24 @@ import { AppComponent } from './app.component';
 
 // ANGULAR MATERIAL
 import { MaterialModule } from './material.module';
+
+// COMPONENTS
 import { MapaComponent } from './components/mapa/mapa.component';
+import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
 
 import { AgmCoreModule } from '@agm/core';
 
 
 
+
 @NgModule({
+  entryComponents: [
+    MapaEditarComponent
+  ],
   declarations: [
     AppComponent,
-    MapaComponent
+    MapaComponent,
+    MapaEditarComponent
   ],
   imports: [
     BrowserModule,

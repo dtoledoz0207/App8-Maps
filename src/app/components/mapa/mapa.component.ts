@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Marcador } from '../../classes/marcador.class';
 
 import {MatSnackBar} from '@angular/material';
+import {MatDialog} from '@angular/material';
+
+import { MapaEditarComponent } from './mapa-editar.component';
 
 @Component({
   selector: 'app-mapa',
@@ -15,7 +18,7 @@ export class MapaComponent implements OnInit {
   lat:number = 19.255909;
   lng:number = -103.716782;
 
-  constructor(private snackBar: MatSnackBar) { 
+  constructor(private snackBar: MatSnackBar, public dialog: MatDialog) { 
    if(localStorage.getItem('marcadores')){
      this.marcadores = JSON.parse(localStorage.getItem('marcadores'));
    }
@@ -44,6 +47,13 @@ export class MapaComponent implements OnInit {
     this.guardarStorage();
 
     this.snackBar.open('Marcador eliminado', 'Cerrar', {duration: 2000});
+  }
+
+  editarMarcador(marcador:Marcador){
+    const dialogRef = this.dialog.open(MapaEditarComponent, {
+      width: '250px',
+      data: {titulo: marcador.titulo, desc: marcador.desc}
+    });
   }
 
 }
