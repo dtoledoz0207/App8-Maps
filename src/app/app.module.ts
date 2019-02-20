@@ -7,19 +7,32 @@ import { AppComponent } from './app.component';
 
 // ANGULAR MATERIAL
 import { MaterialModule } from './material.module';
+
+// COMPONENTS
 import { MapaComponent } from './components/mapa/mapa.component';
+import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
+
+import { AgmCoreModule } from '@agm/core';
+
 
 
 
 @NgModule({
+  entryComponents: [
+    MapaEditarComponent
+  ],
   declarations: [
     AppComponent,
-    MapaComponent
+    MapaComponent,
+    MapaEditarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDJ5cITdx4KfRavJiwBwGK8vphjz73-RxM'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
